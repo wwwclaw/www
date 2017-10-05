@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>RapydScript Cyborg Challenge</title>
+<link rel="stylesheet" href="themes/alertify.css" />
+<link rel="stylesheet" href="themes/alertify.default.css" />
+<link rel='stylesheet' href='cyborg.css' />
+<script type="text/javascript" src="alertify.min.js"></script>
+<script type="text/javascript" src="rapyd.js"></script>
+</head>
+<body onload="runGame();">
+<br>
+<div id="game">
+	<div id="display">
+        <canvas id="myCanvas" width="700" height="432">
+        Upgrade your browser.
+        </canvas>
+    </div>
+    <div id="hud">
+        <div class="hudelem">
+            <div class="chips">Chips Left:</div>
+            <div class="chips" id="count">000</div>
+        </div>
+        <div class="hudelem">
+    	    <div class="huditems">
+    	    	<div class="hud"><div class="item" id="inv_flippers"></div></div>
+    	    	<div class="hud"><div class="item" id="inv_fireboots"></div></div>
+    	    	<div class="hud"><div class="item" id="inv_skates"></div></div>
+    	    	<div class="hud"><div class="item" id="inv_suctionboots"></div></div>
+    	    </div>
+    	    <div class="huditems">
+    	    	<div class="hud"><div class="item" id="key_green"></div></div>
+    	    	<div class="hud"><div class="item" id="key_yellow"></div></div>
+    	    	<div class="hud"><div class="item" id="key_red"></div></div>
+    	    	<div class="hud"><div class="item" id="key_blue"></div></div>
+    	    </div>
+    	</div>
+    	<div class="hudelem">
+    	    <fieldset>
+    	        <legend>Messages</legend>
+    	        <div id="message"></div
+            </fieldset>
+        </div>
+    </div>
+</div>
+<hr/>
+Keys:<br>
+<ul>
+<li>Use the Arrow Keys to Play.</li>
+<li>Press 'r' to Restart a level.</li>
+<li>Press 'p' to Enter a Password.</li>
+</ul>
+Written using <a href="https://github.com/atsepkov/RapydScript" target="_blank">RapydScript</a>
+(<a href="http://www.rapydscript.com/try-it/" target="_blank">Demo</a>)<br/>
+Source on <a href="https://github.com/charleslaw/cyborgchallenge/tree/master" target="_blank">Github</a><br/>
+Copyright &copy; 2012 Charles Law
+</body>
+</html>

@@ -1,0 +1,50 @@
+div#game{
+  display: inline-block;
+}
+div#display{
+  width: 432px;
+  height: 432px;
+  float: left;
+}
+div#hud{
+  width: 192px;
+  float: left;
+  padding-left: 2em;
+}
+
+div.hudelem {
+    padding-top: 0em;
+    padding-bottom: 1em;
+}
+
+#message {
+    text-align: justify;
+}
+
+div.huditems{
+    height: 48px;
+}
+
+div.hud{
+	width: 48px;
+	float: left;
+	background-image: url(images/tile1.png)
+}
+
+div#chips{
+  width: 192px;
+}
+
+div.chips{
+  font-size: 2em;
+  font-family: "Segoe UI Light", "Helvetica Neue", 'RobotoLight', "Segoe UI", "Segoe WP", sans-serif;
+}
+
+#count{
+    padding-left: 1em;
+}
+
+.item{
+	width: 48px;
+	height: 48px;
+}

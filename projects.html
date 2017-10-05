@@ -1,0 +1,598 @@
+<head>
+    <title>Charles Law: Projects</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/favicon-144.png">
+    <link rel="icon" sizes="16x16 32x32 48x48" href="/favicon.ico">
+    <script language="javascript" type="text/javascript" src="classie.js"></script>
+</head>
+
+<style type=text/css>
+body {
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    background-color: hsla(185,60%,96%,1);
+}
+#links{
+    padding-right: 4rem;
+    line-height: 1rem;
+    height: 1rem;
+    margin-left: auto;
+    align-self: center;
+}
+
+#tlname {
+    font-size: 1.5em;
+    padding-left: 8rem;
+    line-height: 1rem;
+    height: 1em;
+    align-self: center;
+}
+
+#header {
+    height: 4em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    /*box-shadow: 0px 1px 4px rgba(0,0,0,0.25);*/
+    background-color: #fff;
+    display: flex;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+#header.smaller {
+    height: 2.5em;
+    font-size: 0.9em;
+}
+
+#page {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    padding: 10px;
+    padding-top: 6em;
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#ui {
+
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#bg {
+    background-color: #051314;
+    background: url(page_mod.svg) no-repeat;
+    height: 50%;
+    width: 50%;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+}
+#mname {
+    line-height: 4em;
+    float: left;
+    font-weight: bold;
+    padding-left: 4em;
+}
+#mname p {
+    padding: 0px;
+    line-height: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 0px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    display: inline-block;
+}
+#mname .underline {
+    background-color: #318f99;
+    display: block;
+    height: 4px;
+    margin-top: 3px;
+    width: 100%;
+    padding: 0;
+}
+
+#header a {
+    text-decoration: none;
+    color: #42becc;
+    display: inline-block;
+    padding-left: 2em;
+    padding-right: 2em;
+    line-height: 1em;
+}
+
+#header a:visited {
+    text-decoration: none;
+    color: #164E55;
+    /*color: #e0fcff;*/
+}
+
+#header .underline {
+	background-color: #42becc; /* same as link color */
+	display: block;
+	height: 2px;
+	margin-top: 0.25em;
+	width: 100%;
+	padding: 0;
+    -webkit-transform: scaleX(0);
+	transform: scaleX(0);
+    -webkit-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+#b {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#header a:hover .underline {
+    -webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+
+
+#banner {
+    margin-left: 10em;
+    margin-top: 3em;
+    background: url(electronic18.svg) no-repeat;
+    opacity: 0.1;
+    position: absolute;
+    top: 4em;
+    bottom: 2em;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+#myname {
+    font-size: 60pt;
+    font-weight: 400;
+    z-index: 1;
+    top: 50%;
+    bottom: 50%;
+    margin: 10px;
+    margin-top: 3rem;
+    padding-left: 10rem;
+}
+
+#desc {
+    font-size: 18pt;
+    margin: 10px;
+    padding-left: 10rem;
+}
+
+#ctext {
+    color: #000;
+    margin-top: 0;
+    position: absolute;
+    top: 4em;
+    left: 0;
+    right: 0;
+}
+
+#banner2 {
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    top: 20em;
+    bottom: 2em;
+    background-color: hsla(185,40%,90%,0.5);
+}
+
+#content2 {
+    padding: 2em;
+    padding-right: 10em;
+    padding-bottom: 4em;
+    position: absolute;
+    bottom: 2em;
+    color: #318f99;
+    /*background-color: hsla(185,40%,94%,1);*/
+    font-size: 14pt;
+}
+
+#content2 img{
+    float: right;
+    border: 10px #333 solid;
+}
+
+#a22 {
+    font-size: 14pt;
+    float: right;
+    width: 50%;
+    padding-right: 3em;
+}
+
+#a11 {
+}
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    height: 2em;
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+#footer a{
+    color: black;
+    text-decoration: none;
+}
+
+#footer img{
+    width: 2em;
+    padding-right: 1em;
+}
+
+#olinks {
+    float: left;
+    position: absolute;
+    left: 0;
+    padding-left: 4em;
+}
+
+#info2 {
+    position: absolute;
+    right: 0em;
+    padding-right: 4em;
+    top: 0;
+    font-size: 12pt;
+    line-height: 4em;
+}
+
+.info2s {
+    font-size: 0.75em;
+    line-height: 0;
+}
+
+#lcredits{
+    font-size: 0.5em;
+}
+
+#credits {
+    position:absolute;
+    bottom: 4em;
+    right: 3em;
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid black;
+    display: none;
+    z-index: 6;
+}
+
+#overlay-back {
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    width      : 100%;
+    height     : 100%;
+    background : #000;
+    opacity    : 0.6;
+    filter     : alpha(opacity=60);
+    z-index    : 5;
+    display    : none;
+}
+
+#contentt {
+    margin-top: 3em;
+    margin-bottom: 6em;
+    line-height: 2em;
+    max-width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contentt h2{
+    margin-left: -2em;
+    margin-top: 2em;
+}
+
+#tlname .underline {
+	height: 3px;
+}
+
+.email {
+    unicode-bidi:bidi-override;
+    direction: rtl;
+}
+
+#contact-form {
+    width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact-form button{
+    float: right;
+    width: 10rem;
+    height: 4rem;
+    padding: 1rem;
+    padding-right: 4rem;
+    border: 1px solid #A9A9A9;
+    color: #fff;
+    text-decoration: none;
+    background: hsla(186,38%,53%,1) url(505832w.svg) no-repeat scroll;
+    background-position: right 1rem center;
+    background-size: 2.5rem 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+
+#contact-form button:disabled{
+    background: hsla(186,0%,53%,1) url(505832w.svg) no-repeat scroll;
+    background-position: right 1rem center;
+    background-size: 2.5rem 2.5rem;
+}
+
+#cheader {
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+}
+
+#cheader2 {
+    width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+}
+
+.field {
+    padding: 0.75em;
+}
+
+.field input, textarea {
+    width: 100%;
+    padding: .4em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
+.field textarea {
+    padding-top: 0.75em;
+}
+
+#jpl {
+    display: block;
+    background-size: contain;
+    background-image: url('Jurassic_Park_outline.svg');
+    width: 30em;
+    height: 7em;
+}
+
+#jpl.jplhover {
+    background-image: url('Jurassic_Park_text.svg');
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="header">
+
+ <div id="tlname">
+    <a href="/" class="applink">Charles Law<span class="underline"></span></a>
+ </div>
+ <div id="links">
+    <a href="projects.html" class="applink">projects<span class="underline"></span></a>
+    <a href="about.html" class="applink">about<span class="underline"></span></a>
+    <a href="contact.html" class="applink">contact<span class="underline"></span></a>
+ </div>
+</div>
+
+    <div id="banner"></div>
+    <div id="ctext">
+        <div id="cheader">
+            <h1>Projects</h1>
+            <p>I have a collection of some of my interesting unclassified projects.  Latest first.</p>
+        </div>
+
+
+
+    <div id="contentt">
+        <h2>Whiteboard Capture Projects</h2>
+            <p>
+            I still need a cool name for these two projects.  The overall goal
+            is to make it easy to capture a whiteboard drawings.
+            I feel like drawing something digitally hampers the flow of ideas,
+            you either use a tool that slows you down, or you easily get
+            distracted and start polishing what's on the screen.  For most
+            people, using pen and paper or working with a whiteboard is the
+            easiest way to brainstorm and be creative.
+            </p>
+        <h3>Cleanup</h3>
+            The first tool cleans up a whiteboard image.  The original version
+            followed a
+            <a href="http://research.microsoft.com/en-us/um/people/zhang/Papers/TR03-39.pdf">research paper</a>
+            from Microsoft, but I have since rewritten every step using
+            different  techniques.  The new tool is equally fast and can
+            better deal with glare.  This tool can output
+            a bitmap, or vectorize the outline of each mark on the whiteboard.
+            <br><br>
+            <img src="UIDesignThumb.jpg"><br>
+            <img src="out.svg" style="width:512px; border: 1px solid black;"><br>
+        <h3>Processing</h3>
+            The second tool extracts the original marker-strokes from the
+            whiteboard image.  This is best demonstrated with an example:
+            <br>
+            <div id="jpl"></div>
+            It is straightforward to get the outline
+            of a mark on the whiteboard - i.e. finding the outline of
+            the white region.  Take the letter "I" - the outline is a vertical
+            rectangle, even though it takes a vertical <b><i>line</b></i> to
+            draw the "I" with a marker.
+            <br><br>
+            Now hover or touch the Jurassic Park logo.  Calculating the red
+            lines based on the white outlines is hard - well maybe not for
+            the "I", but it's really tricky for the "K".
+            That's what this project does.
+            <br><br>
+            After getting the original marker coordinates, the points
+            have a lot in common with the data from a touch gesture.  Tools
+            written to work with touch devices can now work with pictures!
+            The proof of concept is works, though it is <b>very</b> rough,
+            and simple whiteboard images can connect to an old project of mine,
+            GrafPad.
+
+
+
+        <h2>GrafPad</h2>
+            <p>
+            GrafPad is a drawing tool designed for touch devices.  The idea is
+            to act like a digital pen and paper.  The input is
+            free form - either touch or mouse inputs, and the tool recognizes
+            objects and automatically cleans them up.
+            So lines that are near horizontal or vertical are made perfectly
+            horizontal or vertical, and
+            polygons are recognized and normalized wherever possible (opposite
+            sides set to equal size, angles converted to 90 degrees, etc).
+            <br><br>
+            I wrote the backend, including designing and building all the
+            cleanup algorithms.  You can see it in action below.
+            <img src="gp_test.gif">
+
+
+
+        <h2>RapydScript I</h2>
+            <p>
+            This project is actually the brainchild of Alex Tsepkov, but I
+            was involved in building and testing the original code, so I thought
+            it worth mentioning.
+            <br><br>
+            I call RapydScript a Python to JavaScript <i>transpiler</i>, as
+            opposed to a compiler.  It is similar to CoffeeScript,
+            but more Pythonic.  RapydScript has a Pythonic syntax but is
+            JavaScript under the hood.  It adds a few things like inheritance
+            to make building webapps easier.
+            <br><br>
+            I helped figure out how to design a lot of the syntax where
+            things weren't so clear, and created the first implementation
+            of several key features like tuple packing/unpacking and exception
+            handling.  I also built one of the largest initial proof
+            of concepts, Cyborg Challenge, which is a RapydScript clone of
+            Chips Challenge that you can
+            <a href="cyborg/index.html" target="_blank">play online.</a>
+            <br><br>
+            <img src="cyborgss.png">
+    </div>
+
+
+
+
+    </div>
+
+
+    <div id="footer">
+        <div id="olinks">
+            <a href="https://github.com/charleslaw" target="_blank"><img src="github_512_black.png"></a>
+            <a href="https://www.linkedin.com/in/charleslaw1" target="_blank"><img src="icon-linkedin.png" style="width: 24;height: 24;margin-bottom: 3;"></a>
+        </div>
+        <div id="info2">
+            <span class="info2s">Copyright 2015 Charles Law</span>
+            <span id="lcredits" class="info2s"><a href="#" id="clink">Credits</a></span>
+        </div>
+    </div>
+
+    <div id="overlay-back"></div>
+    <div id="credits">
+        Design & Coding<br>
+        by Charles Law<br>
+        <br>
+        Circuit Icon made by<br><a href="http://www.freepik.com" title="Freepik">Freepik</a>
+            from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a><br>
+        <br>
+        Airplane icon made by<br><a href="https://thenounproject.com/schumanncombo/">Richard Schumann</a>
+        modified by Charles Law.<br>
+    </div>
+</body>
+
+
+<script>
+    var clink = document.getElementById("clink");
+    clink.onclick = function() {
+        var credits_div = document.getElementById("credits");
+        var overlay_div = document.getElementById("overlay-back");
+        if (credits_div.style.display != "block") {
+            credits_div.style.display = 'block';
+            overlay_div.style.display = 'block';
+        } else {
+            credits_div.style.display = 'none';
+            overlay_div.style.display = 'none';
+        }
+    }
+    var clink = document.getElementById("overlay-back");
+    clink.onclick = function() {
+        var credits_div = document.getElementById("credits");
+        var overlay_div = document.getElementById("overlay-back");
+        credits_div.style.display = 'none';
+        overlay_div.style.display = 'none';
+    }
+
+    window.addEventListener('scroll', function(e){
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+        shrinkOn = 75,
+        header = document.getElementById("header");
+        if (distanceY > shrinkOn) {
+            classie.add(header,"smaller");
+        } else {
+            if (classie.has(header,"smaller")) {
+                classie.remove(header,"smaller");
+            }
+        }
+    });
+
+    var jpl = document.getElementById("jpl");
+    jpl.onmouseover = function() {
+        this.className = "jplhover";
+    };
+    jpl.onmouseout = function() {
+        this.className = "";
+    };
+    var toggleHover = function(jplelem) {
+        if (jplelem.className == "jplhover") {
+            jplelem.className = "";
+        } else {
+            jplelem.className = "jplhover";
+        }
+    }
+    var touchjpl = function(e) {
+        toggleHover(this);
+        e.preventDefault();
+        return false;
+    }
+    jpl.addEventListener("touchstart", touchjpl, false);
+
+    window.onload = function() {
+        preloadImg = new Image()
+        preloadImg.src="Jurassic_Park_text.svg"
+    }
+</script>
+
+</html>
