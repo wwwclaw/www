@@ -466,6 +466,7 @@ body {
     var form = document.getElementById("contact-form");
     form.onsubmit = function(event) {
         var xmlhttp = new XMLHttpRequest();
+	xmlhttp.withCredentials = true;
         var url = "//www.yarnspectrum.com/sendcontactform";
 
         xmlhttp.onreadystatechange = function() {
