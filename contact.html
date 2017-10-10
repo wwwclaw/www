@@ -66,11 +66,11 @@ body {
           box-sizing: border-box;
 }
 #ui {
-    
+
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 #bg {
     background-color: #051314;
@@ -318,7 +318,7 @@ body {
 
 .email {
     unicode-bidi:bidi-override;
-    direction: rtl; 
+    direction: rtl;
 }
 
 #contact-form {
@@ -390,7 +390,7 @@ body {
 
 <body>
 <div id="header">
-    
+
  <div id="tlname">
     <a href="/" class="applink">Charles Law<span class="underline"></span></a>
  </div>
@@ -407,30 +407,30 @@ body {
             <h1>Contact</h1>
             <p>The best way to reach me is via email at <span id="memail" class="email"></span><span id="memail2" class="email"></span> or using the form below.</p>
         </div>
-            
+
             <form id="contact-form" method="post">
                 <div class="field">
                     <input type="text" id="name" name="name" required placeholder="Name">
                 </div>
-            
+
                 <div class="field">
                     <input type="email" id="email" name="email" required placeholder="Email">
                 </div>
-            
+
                 <div class="field">
                     <textarea id="message" name="message" required placeholder="Hello Charles ..." rows="5"></textarea>
                 </div>
-                
+
                 <div class="field" id="grec">
                     <div class="g-recaptcha" data-sitekey="6LdZABETAAAAANtWScRadp6ko5Xmd3yMYFg71ZeP" data-callback="enableSend"></div>
                 </div>
-            
+
                 <div class="field">
                     <button id="submit-button" type="submit" disabled>Send</button>
                 </div>
             </form>
     </div>
-    
+
     <div id="footer">
         <div id="olinks">
             <a href="https://github.com/charleslaw" target="_blank"><img src="github_512_black.png"></a>
@@ -441,7 +441,7 @@ body {
             <span id="lcredits" class="info2s"><a href="#" id="clink">Credits</a></span>
         </div>
     </div>
-    
+
     <div id="overlay-back"></div>
     <div id="credits">
         Design & Coding<br>
@@ -470,15 +470,19 @@ body {
         var url = "//www.yarnspectrum.com/sendcontactform";
 
         xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                console.log(xmlhttp.responseText);
-                var sbut = document.getElementById("submit-button")
-                sbut.disabled = true;
-                sbut.innerText = "Sent";
-                document.getElementById("name").disabled = true;
-                document.getElementById("email").disabled = true;
-                document.getElementById("message").disabled = true;
-                //var myArr = JSON.parse(xmlhttp.responseText);
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
+                    console.log("sent", xmlhttp.responseText);
+                    var sbut = document.getElementById("submit-button")
+                    sbut.disabled = true;
+                    sbut.innerText = "Sent";
+                    document.getElementById("name").disabled = true;
+                    document.getElementById("email").disabled = true;
+                    document.getElementById("message").disabled = true;
+                    //var myArr = JSON.parse(xmlhttp.responseText);
+                } else {
+                    console.log("resp", xmlhttp.readyState, xmlhttp.status);
+                }
             }
         };
         xmlhttp.open("POST", url, true);
@@ -517,7 +521,7 @@ body {
         credits_div.style.display = 'none';
         overlay_div.style.display = 'none';
     }
-    
+
     var enableSend = function(e) {
         gresp = e;
         document.getElementById("submit-button").disabled = false;
