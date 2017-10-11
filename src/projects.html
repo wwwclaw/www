@@ -411,7 +411,7 @@ body {
     <div id="ctext">
         <div id="cheader">
             <h1>Projects</h1>
-            <p>I have a collection of some of my interesting unclassified projects.  Latest first.</p>
+            <p>I have a collection of some of my interesting personal projects.  Most recent first.</p>
         </div>
 
 
@@ -419,7 +419,7 @@ body {
     <div id="contentt">
         <h2>Whiteboard Capture Projects</h2>
             <p>
-            I still need a cool name for these two projects.  The overall goal
+            I still need a cool name for these two tools.  The overall goal
             is to make it easy to capture a whiteboard drawings.
             I feel like drawing something digitally hampers the flow of ideas,
             you either use a tool that slows you down, or you easily get
@@ -438,28 +438,28 @@ body {
             <br><br>
             <img src="UIDesignThumb.jpg"><br>
             <img src="out.svg" style="width:512px; border: 1px solid black;"><br>
-        <h3>Processing</h3>
-            The second tool extracts the original marker-strokes from the
-            whiteboard image.  This is best demonstrated with an example:
+        <h3>Recognition</h3>
+            The second tool extracts the original marker strokes from the
+            whiteboard image.  This is best illustrated with an example:
             <br>
             <div id="jpl"></div>
-            It is straightforward to get the outline
-            of a mark on the whiteboard - i.e. finding the outline of
-            the white region.  Take the letter "I" - the outline is a
-	    rectangle, even though it takes a vertical <b><i>line</i></b> to
-            draw the "I" with a marker.
+            It is relatively straightforward to get the outline
+            of a mark on the whiteboard.  For the letter "I" in the Jurassic
+            Park logo, that would be finding the outline the white rectangle.
             <br><br>
-            Now hover or touch the Jurassic Park logo.  Calculating the red
-            lines based on the white outlines gets hard - "I" may not be too
-	    bad, but it's really tricky for the "K".
-            That's what this project does.
+            When someone draws an "I", though, they usually draw a vertical
+            <b><i>line</i></b>.  Hover or touch the Jurassic Park logo -
+            the red line is the marker stroke.  Calculating the red marker
+            strokes based on the white outlines gets hard - the "I" may not
+            be too difficult, but it's tricky for "K" since it has lots of
+            intersections.  Finding these marker strokes is what this tool does.
             <br><br>
             After estimating the original marker coordinates, the points
-            have a lot in common with the data from a touch gesture.  Tools
+            have a lot in common with touch gestures.  Tools
             written to work with touch devices can now work with pictures!
             The proof of concept works, though it is <b>very</b> rough,
-            and simple whiteboard images can connect to an old project of mine,
-            GrafPad, and works for simple images.
+            and simple whiteboard images can connect to an old project
+            I worked on, GrafPad, and works for simple shapes.
 
 
 
@@ -483,14 +483,14 @@ body {
         <h2>RapydScript I</h2>
             <p>
             This project is actually the brainchild of Alex Tsepkov, but I
-            was involved in building and testing the original code, so I thought
-            it worth mentioning.
+            was involved in building the original code and defining some of
+            the syntax so I thought it worth mentioning.
             <br><br>
             I call RapydScript a Python to JavaScript <i>transpiler</i>, as
             opposed to a compiler.  It is similar to CoffeeScript,
             but more Pythonic.  RapydScript has a Pythonic syntax but is
-            JavaScript under the hood.  It adds a few things like inheritance
-            to make building webapps easier.
+            JavaScript under the hood.  It also makes some tricker aspects
+            easier, like inheritance.
             <br><br>
             I helped figure out how to design a lot of the syntax where
             things weren't so clear, and created the first implementation
