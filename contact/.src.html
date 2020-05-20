@@ -405,7 +405,7 @@ body {
     <div id="ctext">
         <div id="cheader2">
             <h1>Contact</h1>
-            <p>The best way to reach me is via email at <span id="memail" class="email"></span><span id="memail2" class="email"></span> or using the form below.</p>
+            <p>You can reach me using the form below.</p>
         </div>
 
             <form id="contact-form" method="post">
@@ -458,16 +458,12 @@ body {
 
 <script>
     var gresp = null;
-    var espan = document.getElementById("memail");
-    espan.innerHTML="moc.liamg@"
-    var espan2 = document.getElementById("memail2");
-    espan2.innerHTML="wal.selrahc"
 
     var form = document.getElementById("contact-form");
     form.onsubmit = function(event) {
         var xmlhttp = new XMLHttpRequest();
 	xmlhttp.withCredentials = true;
-        var url = "//www.yarnspectrum.com/sendcontactform";
+        var url = "http://45.76.16.102/sendcontactform";
 
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4) {
