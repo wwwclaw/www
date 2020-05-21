@@ -16,22 +16,60 @@ body{margin:0;font-family:Montserrat,sans-serif;color:#000;background-color:hsla
 <div id=banner></div>
 <div id=ctext>
     <div id=cheader>
-<h1>Projects</h1>
-<p>I have a collection of some of my interesting personal projects. Most recent first.</p>
+    <h1>Projects</h1>
+    <p>I have a collection of some of my interesting personal projects. Starting with the most recent.</p>
     </div>
 
 <div id=contentt>
 
 <h2>Whiteboard Capture Projects</h2>
-<p>I still need a cool name for these two tools. The overall goal is to make it easy to capture a whiteboard drawings. I feel like drawing something digitally hampers the flow of ideas, you either use a tool that slows you down, or you easily get distracted and start polishing what's on the screen. For most people, using pen and paper or working with a whiteboard is the easiest way to brainstorm and be creative.
+<p>
+The overall goal was to make it easy to capture a whiteboard drawings. I feel like drawing something digitally hampers the flow of ideas, you either use a tool that slows you down, or you easily get distracted and start polishing what's on the screen. For most people, using pen and paper or working with a whiteboard is the easiest way to brainstorm and be creative.
+</p><p>
+I had these two projects close to production quality before my children were born and I stopped working on them. Recently, Microsoft released <a href="https://www.microsoft.com/en-us/p/office-lens/9wzdncrfj3t8" target="_blank">Office Lens</a> to solve this problem.
+</p>
 
-<h3>Cleanup</h3>The first tool cleans up a whiteboard image. The original version followed a <a href=http://research.microsoft.com/en-us/um/people/zhang/Papers/TR03-39.pdf>research paper</a> from Microsoft, but I have since rewritten every step using different techniques. The new tool is equally fast and can better deal with glare. This tool can output a bitmap, or vectorize the outline of each mark on the whiteboard.<br><br><img src=/UIDesignThumb.jpg><br><img src=/out.svg style="width:512px;border:1px solid #000"><br>
+<h3>Cleanup</h3>
+<p>
+The first tool cleans up a whiteboard image. The original version followed a <a href=http://research.microsoft.com/en-us/um/people/zhang/Papers/TR03-39.pdf target="_blank">research paper</a> from Microsoft, but I have since rewritten every step using different techniques. The new tool is equally fast and can better deal with glare. This tool can output a bitmap, or vectorize the outline of each mark on the whiteboard.
+</p><p>
+<img src=/UIDesignThumb.jpg>
+</p><p>
+<img src=/out.svg style="width:512px;border:1px solid #000">
+</p>
 
-<h3>Recognition</h3>The second tool extracts the original marker strokes from the whiteboard image. This is best illustrated with an example:<br><div id=jpl></div>It is relatively straightforward to get the outline of a mark on the whiteboard. For the letter "I" in the Jurassic Park logo, that would be finding the outline of the white rectangle.<br><br>When someone draws an "I", though, they usually draw a vertical <b><i>line</i></b>, not a rectangle. Hover or touch the Jurassic Park logo - the red lines are the marker strokes. Calculating the red marker strokes based on the white outlines can get hard - the "I" may not be too difficult, but the "K" has a lot of intersections which are tricky. Finding these marker strokes is what this tool does.<br><br>After estimating the original marker coordinates, the points have a lot in common with touch gestures. Tools written to work with touch devices can now work with pictures! The proof of concept works, though it is <b>very</b> rough, and simple whiteboard images can connect to an old project I worked on, GrafPad, and works for simple shapes.
+<h3>Recognition</h3>
+<p>
+The second tool extracts the original marker strokes from the whiteboard image. This is best illustrated with an example:
+</p><p>
+<div id=jpl></div>
+</p><p>
+It is relatively straightforward to get the outline of a mark on the whiteboard. For the letter "I" in the Jurassic Park logo, that would be finding the outline of the white rectangle.
+</p><p>
+When someone draws an "I", though, they actually draw a vertical <b><i>line</i></b>, not a rectangle. Hover or touch the Jurassic Park logo - the red lines are the marker strokes. This problem gets tricky fast - "I" is easy, but the "K" has a lot of intersections, and the outlines of the different letters touch. Finding these marker strokes is what this tool does.
+</p><p>
+After estimating the original marker coordinates, the points have a lot in common with touch gestures. Tools written to work for touch devices can now work with pictures! The proof of concept works, though it ndees some mroe polishing. I actually connected this output to an old project I worked on, GrafPad, which converts touch coordinates to shapes. Using this, I converted pictures of a whiteboard with a block diagram into a PowerPoint with the block diagram.
+</p><p>
 
-<h2>GrafPad</h2><p>GrafPad is a drawing tool designed for touch devices. The idea is to act like a digital pen and paper. The input is free form - either touch or mouse inputs, and the tool recognizes objects and automatically cleans them up. So lines that are near horizontal or vertical are made perfectly horizontal or vertical, and polygons are recognized and normalized wherever possible (opposite sides set to equal size, angles converted to 90 degrees, etc).<br><br>I wrote the backend, including designing and building all the cleanup algorithms. You can see it in action below.<br><img src=/gp_test.gif>
+<h2>GrafPad</h2>
+<p>
+GrafPad is a drawing tool designed for touch devices. The idea is to act like a digital pen and paper. The input is free form - either touch or mouse inputs, and the tool recognizes objects and automatically cleans them up. So lines that are near horizontal or vertical are made perfectly horizontal or vertical, and polygons are recognized and normalized wherever possible (opposite sides set to equal size, angles converted to 90 degrees, etc).
+</p><p>
+I wrote the backend, including designing and building all the cleanup algorithms. You can see it in action below.
+</p><p>
+<img src=/gp_test.gif>
+</p>
 
-<h2>RapydScript I</h2><p>This project is actually the brainchild of Alex Tsepkov, but I was involved in building the original code and defining some of the syntax so I thought it worth mentioning.<br><br>I call RapydScript a Python to JavaScript <i>transpiler</i>, as opposed to a compiler. It is similar to CoffeeScript, but more Pythonic. RapydScript has a Pythonic syntax but is JavaScript under the hood. It also makes some tricker aspects easier, like inheritance.<br><br>I helped figure out how to design a lot of the syntax where things weren't so clear, and created the first implementation of several key features like tuple packing/unpacking and exception handling. I also built one of the largest initial proof of concepts, Cyborg Challenge, which is a RapydScript clone of Chips Challenge that you can <a href=/cyborg target=_blank>play online.</a><br><br><img src=/cyborgss.png>
+<h2>RapydScript I</h2>
+<p>
+This project is actually the brainchild of Alex Tsepkov, but I helped build the original code and define the syntax so I thought it worth mentioning.
+</p><p>
+I call RapydScript a Python to JavaScript <i>transpiler</i>, as opposed to a compiler, since the language behaves like JavaScript. RapydScript has a Pythonic syntax but is JavaScript under the hood - similar to how CoffeeScript brings a Ruby-like syntax to JavaScript. It also has some syntatic sugar to make some tricker aspects easier, like inheritance.
+</p><p>
+I helped design a lot of the syntax where things weren't so clear, and created the first implementation of several key features like tuple packing/unpacking and exception handling. I also built one of the largest initial proof of concepts, Cyborg Challenge, which is a RapydScript clone of Chips Challenge that you can <a href=/cyborg target=_blank>play online.</a>
+</p><p>
+<img src=/cyborgss.png>
+</p>
 
     </div>
 </div>
