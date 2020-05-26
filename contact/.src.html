@@ -328,6 +328,7 @@ body {
 }
 
 #contact-form button{
+    clear: both;
     float: right;
     width: 10rem;
     height: 4rem;
@@ -384,6 +385,20 @@ body {
     float: right;
 }
 
+#success {
+    display: none;
+    text-align: center;
+    margin-top: 3em;
+}
+
+#error {
+    clear: both;
+    float: right;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: none;
+    color: red;
+}
 </style>
 
 </head>
@@ -408,6 +423,10 @@ body {
             <p>You can reach me using the form below.</p>
         </div>
 
+            <div id="success">
+                <h3>Message Sent</h3><p>Thank you for reaching out.</p>
+            </div>
+
             <form id="contact-form" method="post">
                 <div class="field">
                     <input type="text" id="name" name="name" required placeholder="Name">
@@ -424,6 +443,8 @@ body {
                 <div class="field" id="grec">
                     <div class="g-recaptcha" data-sitekey="6LdZABETAAAAANtWScRadp6ko5Xmd3yMYFg71ZeP" data-callback="enableSend"></div>
                 </div>
+
+                <div id="error">There was an error please try again later.</div>
 
                 <div class="field">
                     <button id="submit-button" type="submit" disabled>Send</button>
@@ -461,8 +482,9 @@ body {
 
     var form = document.getElementById("contact-form");
     form.onsubmit = function(event) {
+        document.getElementById("error").style.display = "none"
         var xmlhttp = new XMLHttpRequest();
-	xmlhttp.withCredentials = true;
+        xmlhttp.withCredentials = true;
         var url = "//www.yarnspectrum.com/sendcontactform";
 
         xmlhttp.onreadystatechange = function() {
@@ -476,7 +498,10 @@ body {
                     document.getElementById("email").disabled = true;
                     document.getElementById("message").disabled = true;
                     //var myArr = JSON.parse(xmlhttp.responseText);
+                    document.getElementById("contact-form").style.display = "none"
+                    document.getElementById("success").style.display = "block"
                 } else {
+                    document.getElementById("error").style.display = "block"
                     console.log("resp", xmlhttp.readyState, xmlhttp.status);
                 }
             }
