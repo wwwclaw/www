@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Charles Law</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
@@ -54,8 +54,7 @@ body {
 
 #header a:visited {
     text-decoration: none;
-    color: #164E55;
-    /*color: #e0fcff;*/
+    color: #42becc;
 }
 
 #header .underline {
@@ -76,10 +75,31 @@ body {
 	transform: scaleX(1);
 }
 
+@media screen and (max-width: 840px) {
+    #links {
+        padding-right: 2rem;
+    }
+    #header a {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #links {
+        padding-right: 0;
+        font-size: 0.8em;
+    }
+    #header a {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
 #banner {
     margin-left: 10em;
     margin-top: 3em;
-    background: url(electronic18.svg) no-repeat;
+    background: url(/electronic18.svg) no-repeat;
     opacity: 0.1;
     position: absolute;
     top: 4em;
@@ -106,6 +126,39 @@ body {
     padding-left: 10rem;
 }
 
+@media screen and (max-width: 1112px) {
+    #banner {
+        margin-left: 4em;
+    }
+    #myname, #desc {
+        padding-left: 4rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #banner {
+        margin-left: 2em;
+    }
+    #myname {
+        padding-left: 2rem;
+        font-size: 48pt;
+    }
+    #desc {
+        padding-left: 2rem;
+        font-size: 16pt;
+    }
+}
+
+@media screen and (max-height: 620px) {
+    #myname {
+        margin-top: 1rem;
+        font-size: 48pt;
+    }
+    #desc {
+        font-size: 16pt;
+    }
+}
+
 #ctext {
     color: #000;
     margin-top: 0;
@@ -119,13 +172,14 @@ body {
     padding: 0;
     position: absolute;
     width: 100%;
-    top: 20em;
+    top: 56%;
     bottom: 2em;
     background-color: hsla(185,40%,90%,0.5);
 }
 
 #content2 {
-    padding: 2em;
+    padding-top: 2em;
+    padding-left: 2em;
     padding-right: 10em;
     padding-bottom: 4em;
     position: absolute;
@@ -138,6 +192,7 @@ body {
 #content2 img{
     float: right;
     border: 10px #333 solid;
+    width: 160px;
 }
 
 #a22 {
@@ -145,6 +200,57 @@ body {
     float: right;
     width: 50%;
     padding-right: 3em;
+}
+
+@media screen and (max-width: 840px) {
+    #content2{
+        padding-left: 1em;
+        padding-right: 5em;
+    }
+}
+
+@media screen and (max-height: 820px) {
+    #content2 {
+        padding-top: 1em;
+        padding-bottom: 3em;
+    }
+    #content2 img {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    #content2 {
+        padding-left: 0;
+        padding-right: 1em;
+    }
+    #content2 img {
+        width: 90px;
+    }
+    #a22 {
+        font-size: 12pt;
+        padding-right: 1em;
+    }
+}
+
+@media screen and (max-height: 620px) {
+    #content2 {
+        padding-top: 0;
+        padding-bottom: 2em;
+    }
+    #content2 img {
+        width: 90px;
+    }
+    #a22 {
+        font-size: 12pt;
+        padding-right: 1em;
+    }
+}
+
+@media screen and (max-height: 420px) {
+    #content2 img {
+        width: 60px;
+    }
 }
 
 #footer {
@@ -165,6 +271,7 @@ body {
 
 #footer img{
     width: 2em;
+    height: 2em;
     padding-right: 1em;
 }
 
@@ -175,6 +282,18 @@ body {
     padding-left: 4em;
 }
 
+@media screen and (max-width: 840px) {
+    #olinks {
+        padding-left: 2em;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #olinks {
+        padding-left: 1em;
+    }
+}
+
 #info2 {
     position: absolute;
     right: 0em;
@@ -182,6 +301,18 @@ body {
     top: 0;
     font-size: 12pt;
     line-height: 4em;
+}
+
+@media screen and (max-width: 840px) {
+    #info2 {
+        padding-right: 2em;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #info2 {
+        padding-right: 1em;
+    }
 }
 
 .info2s {
@@ -194,7 +325,7 @@ body {
 }
 
 #credits {
-    position:absolute;
+    position:fixed;
     bottom: 4em;
     right: 3em;
     background-color: #fff;
@@ -205,11 +336,11 @@ body {
 }
 
 #overlay-back {
-    position   : absolute;
+    position   : fixed;
     top        : 0;
     left       : 0;
-    width      : 100%;
-    height     : 100%;
+    bottom     : 0;
+    right      : 0;
     background : #000;
     opacity    : 0.6;
     filter     : alpha(opacity=60);
@@ -253,8 +384,8 @@ body {
 
     <div id="footer">
         <div id="olinks">
-            <a href="https://github.com/charleslaw" target="_blank"><img src="github_512_black.png"></a>
-            <a href="https://www.linkedin.com/in/charleslaw1" target="_blank"><img src="icon-linkedin.png" style="width: 24;height: 24;margin-bottom: 3;"></a>
+            <a href="https://github.com/charleslaw" target="_blank"><img src="/github_512_black.png"></a>
+            <a href="https://www.linkedin.com/in/charleslaw1" target="_blank"><img src="/icon-linkedin.png" style="font-size:0.75em;margin-bottom:0.25em;"></a>
         </div>
         <div id="info2">
             <span class="info2s">Copyright 2015 Charles Law</span>
