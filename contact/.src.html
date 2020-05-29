@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Charles Law: Contact</title>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -20,6 +20,20 @@ body {
     background-color: hsla(185,60%,96%,1);
 }
 
+#content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    padding-bottom: 4em;
+    box-sizing: border-box;
+}
+
+#centered {
+    min-height: 100%;
+}
+
 #links{
     padding-right: 4rem;
     line-height: 1rem;
@@ -34,6 +48,10 @@ body {
     line-height: 1rem;
     height: 1em;
     align-self: center;
+}
+
+#tlname .underline {
+	height: 3px;
 }
 
 #header {
@@ -58,19 +76,23 @@ body {
     font-size: 0.9em;
 }
 
+#header .ald {
+    text-align: center;
+    width: 6em;
+    display: inline-block;
+}
+
 #header a {
     text-decoration: none;
     color: #42becc;
     display: inline-block;
-    padding-left: 2em;
-    padding-right: 2em;
     line-height: 1em;
+    text-align: center;
 }
 
 #header a:visited {
     text-decoration: none;
-    color: #164E55;
-    /*color: #e0fcff;*/
+    color: #42becc;
 }
 
 #header .underline {
@@ -89,6 +111,34 @@ body {
 #header a:hover .underline {
     -webkit-transform: scaleX(1);
 	transform: scaleX(1);
+}
+
+@media screen and (max-width: 840px) {
+    #links {
+        padding-right: 2rem;
+    }
+    #header .ald {
+        width: 5em;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    #tlname {
+        font-size: 0.8em;
+        padding-left: 1rem;
+    }
+    #links {
+        padding-right: 1em;
+        font-size: 0.7em;
+    }
+    #header .ald {
+        width: 4.75em;
+    }
+}
+
+#tlname a {
+    width: 7em;
+    text-align: left;
 }
 
 #banner {
@@ -118,15 +168,16 @@ body {
 #ctext {
     color: #000;
     margin-top: 0;
-    position: absolute;
-    top: 4em;
+    padding-top: 4em;
     left: 0;
     right: 0;
 }
 
 #footer {
-    position: fixed;
-    bottom: 0px;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
     height: 2em;
     background-color: #fff;
     color: #000;
@@ -142,6 +193,7 @@ body {
 
 #footer img{
     width: 2em;
+    height: 2em;
     padding-right: 1em;
 }
 
@@ -152,6 +204,18 @@ body {
     padding-left: 4em;
 }
 
+@media screen and (max-width: 840px) {
+    #olinks {
+        padding-left: 2em;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #olinks {
+        padding-left: 1em;
+    }
+}
+
 #info2 {
     position: absolute;
     right: 0em;
@@ -159,6 +223,18 @@ body {
     top: 0;
     font-size: 12pt;
     line-height: 4em;
+}
+
+@media screen and (max-width: 840px) {
+    #info2 {
+        padding-right: 2em;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #info2 {
+        padding-right: 1em;
+    }
 }
 
 .info2s {
@@ -171,7 +247,7 @@ body {
 }
 
 #credits {
-    position:absolute;
+    position:fixed;
     bottom: 4em;
     right: 3em;
     background-color: #fff;
@@ -182,11 +258,11 @@ body {
 }
 
 #overlay-back {
-    position   : absolute;
+    position   : fixed;
     top        : 0;
     left       : 0;
-    width      : 100%;
-    height     : 100%;
+    bottom     : 0;
+    right      : 0;
     background : #000;
     opacity    : 0.6;
     filter     : alpha(opacity=60);
@@ -194,14 +270,17 @@ body {
     display    : none;
 }
 
-#tlname .underline {
-	height: 3px;
-}
-
 #contact-form {
     width: 30em;
+    max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
+}
+
+#contact-form:last-child:after {
+    content: " ";
+    display: table;
+    clear: both;
 }
 
 #contact-form button{
@@ -219,7 +298,7 @@ body {
     background-size: 2.5rem 2.5rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
-    margin-bottom: 6em;
+    margin-bottom: 1.5em;
 }
 
 #contact-form button:disabled{
@@ -237,6 +316,7 @@ body {
 
 #cheader2 {
     width: 40em;
+    max-width: 95vw;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2em;
@@ -247,7 +327,7 @@ body {
 }
 
 .field input, textarea {
-    width: 100%;
+    width: calc(100% - 1.5em);
     padding: .4em;
     padding-left: 0.75em;
     padding-right: 0.75em;
@@ -277,63 +357,80 @@ body {
     display: none;
     color: red;
 }
+
+@media screen and (max-height: 840px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 0.8em;
+    }
+    #error {
+        font-size: 0.9em;
+    }
+}
+
 </style>
 
 </head>
 
 <body>
-<div id="header">
+<div id="content">
+    <div id="centered">
+        <div id="header">
 
- <div id="tlname">
-    <a href="/" class="applink">Charles Law<span class="underline"></span></a>
- </div>
- <div id="links">
-    <a href="/projects/" class="applink">projects<span class="underline"></span></a>
-    <a href="/about/" class="applink">about<span class="underline"></span></a>
-    <a href="/contact/" class="applink">contact<span class="underline"></span></a>
- </div>
-</div>
-
-    <div id="banner"></div>
-    <div id="ctext">
-        <div id="cheader2">
-            <h1>Contact</h1>
-            <p>You can reach me using the form below.</p>
+            <div id="tlname">
+                <a href="/" class="applink">Charles Law<span class="underline"></span></a>
+            </div>
+            <div id="links">
+                <!--div class="ald"><a href="//blog.charleslaw.me" class="applink">blog<span class="underline"></span></a></div-->
+                <div class="ald"><a href="/projects/" class="applink">projects<span class="underline"></span></a></div>
+                <div class="ald"><a href="/about/" class="applink">about<span class="underline"></span></a></div>
+                <div class="ald"><a href="/contact/" class="applink">contact<span class="underline"></span></a></div>
+            </div>
         </div>
 
-            <div id="success">
-                <h3>Message Sent</h3><p>Thank you for reaching out.</p>
+        <div id="banner"></div>
+        <div id="ctext">
+            <div id="cheader2">
+                <h1>Contact</h1>
+                <p>You can reach me using the form below.</p>
             </div>
 
-            <form id="contact-form" method="post">
-                <div class="field">
-                    <input type="text" id="name" name="name" required placeholder="Name">
+                <div id="success">
+                    <h3>Message Sent</h3><p>Thank you for reaching out.</p>
                 </div>
 
-                <div class="field">
-                    <input type="email" id="email" name="email" required placeholder="Email">
-                </div>
+                <form id="contact-form" method="post">
+                    <div class="field">
+                        <input type="text" id="name" name="name" required placeholder="Name">
+                    </div>
 
-                <div class="field">
-                    <textarea id="message" name="message" required placeholder="Hello Charles ..." rows="5"></textarea>
-                </div>
+                    <div class="field">
+                        <input type="email" id="email" name="email" required placeholder="Email">
+                    </div>
 
-                <div class="field" id="grec">
-                    <div class="g-recaptcha" data-sitekey="6LdZABETAAAAANtWScRadp6ko5Xmd3yMYFg71ZeP" data-callback="enableSend"></div>
-                </div>
+                    <div class="field">
+                        <textarea id="message" name="message" required placeholder="Hello Charles ..." rows="5"></textarea>
+                    </div>
 
-                <div id="error">There was an error please try again later.</div>
+                    <div class="field" id="grec">
+                        <div class="g-recaptcha" data-sitekey="6LdZABETAAAAANtWScRadp6ko5Xmd3yMYFg71ZeP" data-callback="enableSend"></div>
+                    </div>
 
-                <div class="field">
-                    <button id="submit-button" type="submit" disabled>Send</button>
-                </div>
-            </form>
+                    <div id="error">There was an error please try again later.</div>
+
+                    <div class="field">
+                        <button id="submit-button" type="submit" disabled>Send</button>
+                    </div>
+                </form>
+        </div>
     </div>
 
     <div id="footer">
         <div id="olinks">
             <a href="https://github.com/charleslaw" target="_blank"><img src="/github_512_black.png"></a>
-            <a href="https://www.linkedin.com/in/charleslaw1" target="_blank"><img src="/icon-linkedin.png" style="width: 24;height: 24;margin-bottom: 3;"></a>
+            <a href="https://www.linkedin.com/in/charleslaw1" target="_blank"><img src="/icon-linkedin.png" style="font-size:0.75em;margin-bottom:0.25em;"></a>
         </div>
         <div id="info2">
             <span class="info2s">Copyright 2015 Charles Law</span>
@@ -341,17 +438,20 @@ body {
         </div>
     </div>
 
-    <div id="overlay-back"></div>
-    <div id="credits">
-        Design & Coding<br>
-        by Charles Law<br>
-        <br>
-        Circuit Icon made by<br><a href="http://www.freepik.com" title="Freepik" target="_blank">Freepik</a>
-            from <a href="http://www.flaticon.com" title="Flaticon" target="_blank">www.flaticon.com</a><br>
-        <br>
-        Airplane icon made by<br><a href="https://thenounproject.com/schumanncombo/" target="_blank">Richard Schumann</a>
-        modified by Charles Law.<br>
-    </div>
+</div>
+
+<div id="overlay-back"></div>
+<div id="credits">
+    Design & Coding<br>
+    by Charles Law<br>
+    <br>
+    Circuit Icon made by<br><a href="http://www.freepik.com" title="Freepik" target="_blank">Freepik</a>
+        from <a href="http://www.flaticon.com" title="Flaticon" target="_blank">www.flaticon.com</a><br>
+    <br>
+    Airplane icon made by<br><a href="https://thenounproject.com/schumanncombo/" target="_blank">Richard Schumann</a>
+    modified by Charles Law.<br>
+</div>
+
 </body>
 
 
