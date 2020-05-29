@@ -43,13 +43,18 @@ body {
     transition: all 0.2s;
 }
 
+#header .ald {
+    text-align: center;
+    width: 6em;
+    display: inline-block;
+}
+
 #header a {
     text-decoration: none;
     color: #42becc;
     display: inline-block;
-    padding-left: 2em;
-    padding-right: 2em;
     line-height: 1em;
+    text-align: center;
 }
 
 #header a:visited {
@@ -79,20 +84,18 @@ body {
     #links {
         padding-right: 2rem;
     }
-    #header a {
-        padding-left: 1.5em;
-        padding-right: 1.5em;
+    #header .ald {
+        width: 5em;
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 670px) {
     #links {
-        padding-right: 0;
-        font-size: 0.8em;
-    }
-    #header a {
-        padding-left: 1em;
         padding-right: 1em;
+        font-size: 0.7em;
+    }
+    #header .ald {
+        width: 4.75em;
     }
 }
 
@@ -357,55 +360,54 @@ body {
 </head>
 
 <body>
+
 <div id="header">
-
-
- <div id="links">
-    <a href="/projects/" class="applink">projects<span class="underline"></span></a>
-    <a href="/about/" class="applink">about<span class="underline"></span></a>
-    <a href="/contact/" class="applink">contact<span class="underline"></span></a>
- </div>
+    <div id="links">
+        <!--div class="ald"><a href="//blog.charleslaw.me" class="applink">blog<span class="underline"></span></a></div-->
+        <div class="ald"><a href="/projects/" class="applink">projects<span class="underline"></span></a></div>
+        <div class="ald"><a href="/about/" class="applink">about<span class="underline"></span></a></div>
+        <div class="ald"><a href="/contact/" class="applink">contact<span class="underline"></span></a></div>
+    </div>
 </div>
 
-    <div id="banner"></div>
-    <div id="ctext">
-            <p id="myname">Charles Law</p>
-            <p id="desc">Software Developer & Scientist</p>
-    </div>
+<div id="banner"></div>
+<div id="ctext">
+    <p id="myname">Charles Law</p>
+    <p id="desc">Software Developer & Scientist</p>
+</div>
 
-    <div id="banner2"></div>
-    <div id="content2">
-        <img src="https://s.gravatar.com/avatar/99836456ec6d87389df32d2cdcf8d825?s=160">
-        <p id="a22">
-            I build products that feel like magic and use machine learning
-            and computer vision to save people time and energy.
-        </p>
-    </div>
+<div id="banner2"></div>
+<div id="content2">
+    <img src="https://s.gravatar.com/avatar/99836456ec6d87389df32d2cdcf8d825?s=160">
+    <p id="a22">
+        I build products that feel like magic and use machine learning
+        and computer vision to save people time and energy.
+    </p>
+</div>
 
-    <div id="footer">
-        <div id="olinks">
-            <a href="https://github.com/charleslaw" target="_blank"><img src="/github_512_black.png"></a>
-            <a href="https://www.linkedin.com/in/charleslaw1" target="_blank"><img src="/icon-linkedin.png" style="font-size:0.75em;margin-bottom:0.25em;"></a>
-        </div>
-        <div id="info2">
-            <span class="info2s">Copyright 2015 Charles Law</span>
-            <span id="lcredits" class="info2s"><a href="#" id="clink">Credits</a></span>
-        </div>
+<div id="footer">
+    <div id="olinks">
+        <a href="https://github.com/charleslaw" target="_blank"><img src="/github_512_black.png"></a>
+        <a href="https://www.linkedin.com/in/charleslaw1" target="_blank"><img src="/icon-linkedin.png" style="font-size:0.75em;margin-bottom:0.25em;"></a>
     </div>
+    <div id="info2">
+        <span class="info2s">Copyright 2015 Charles Law</span>
+        <span id="lcredits" class="info2s"><a href="#" id="clink">Credits</a></span>
+    </div>
+</div>
 
-    <div id="overlay-back"></div>
-    <div id="credits">
-        Design & Coding<br>
-        by Charles Law<br>
-        <br>
-        Circuit Icon made by<br><a href="http://www.freepik.com" title="Freepik" target="_blank">Freepik</a>
-            from <a href="http://www.flaticon.com" title="Flaticon" target="_blank">www.flaticon.com</a><br>
-        <br>
-        Airplane icon made by<br><a href="https://thenounproject.com/schumanncombo/" target="_blank">Richard Schumann</a>
-        modified by Charles Law.<br>
-    </div>
+<div id="overlay-back"></div>
+<div id="credits">
+    Design & Coding<br>
+    by Charles Law<br>
+    <br>
+    Circuit Icon made by<br><a href="http://www.freepik.com" title="Freepik" target="_blank">Freepik</a>
+        from <a href="http://www.flaticon.com" title="Flaticon" target="_blank">www.flaticon.com</a><br>
+    <br>
+    Airplane icon made by<br><a href="https://thenounproject.com/schumanncombo/" target="_blank">Richard Schumann</a>
+    modified by Charles Law.<br>
+</div>
 </body>
-
 
 <script>
     var clink = document.getElementById("clink");
