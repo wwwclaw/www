@@ -15,7 +15,6 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="/favicon-144.png">
     <link rel="icon" sizes="16x16 32x32 48x48" href="/favicon.ico">
-    <script language="javascript" type="text/javascript" src="/classie.js"></script>
 </head>
 
 <style type=text/css>
@@ -344,9 +343,6 @@ body {
     #contentt {
         line-height: 1.4rem;
     }
-    #error {
-        font-size: 0.9em;
-    }
 }
 </style>
 </head>
@@ -481,10 +477,12 @@ I helped design a lot of the syntax where things weren't so clear, and created t
         shrinkOn = 75,
         header = document.getElementById("header");
         if (distanceY > shrinkOn) {
-            classie.add(header,"smaller");
+            if (header.className === "") {
+                header.className = "smaller";
+            }
         } else {
-            if (classie.has(header,"smaller")) {
-                classie.remove(header,"smaller");
+            if (header.className === "smaller") {
+                header.className = "";
             }
         }
     });

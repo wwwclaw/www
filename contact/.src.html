@@ -16,7 +16,6 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="/favicon-144.png">
     <link rel="icon" sizes="16x16 32x32 48x48" href="/favicon.ico">
-    <script language="javascript" type="text/javascript" src="/classie.js"></script>
 </head>
 
 <style type=text/css>
@@ -172,6 +171,18 @@ body {
     padding-left: 10rem;
 }
 
+@media screen and (max-width: 1112px) {
+    #banner {
+        margin-left: 4em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #banner {
+        margin-left: 2em;
+    }
+}
+
 #ctext {
     color: #000;
     margin-top: 0;
@@ -315,7 +326,8 @@ body {
 }
 
 #cheader {
-    width: 60vw;
+    width: 58em;
+    max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2em;
@@ -458,9 +470,7 @@ body {
     Airplane icon made by<br><a href="https://thenounproject.com/schumanncombo/" target="_blank">Richard Schumann</a>
     modified by Charles Law.<br>
 </div>
-
 </body>
-
 
 <script>
     var gresp = null;
@@ -538,10 +548,12 @@ body {
         shrinkOn = 75,
         header = document.getElementById("header");
         if (distanceY > shrinkOn) {
-            classie.add(header,"smaller");
+            if (header.className === "") {
+                header.className = "smaller";
+            }
         } else {
-            if (classie.has(header,"smaller")) {
-                classie.remove(header,"smaller");
+            if (header.className === "smaller") {
+                header.className = "";
             }
         }
     });
