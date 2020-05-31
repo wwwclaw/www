@@ -11,7 +11,6 @@
     </script>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="/favicon-144.png">
@@ -158,6 +157,9 @@ body {
     left: 0;
     right: 0;
     z-index: -1;
+    width: 280.375px;
+    max-width: 38vw;
+    background-size: contain;
 }
 
 #myname {
@@ -288,6 +290,22 @@ body {
     display    : none;
 }
 
+#cheader {
+    width: 58em;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+}
+
+#cheader2 {
+    width: 40em;
+    max-width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+}
+
 #contact-form {
     width: 30em;
     max-width: 90vw;
@@ -301,7 +319,7 @@ body {
     clear: both;
 }
 
-#contact-form button{
+#contact-form button {
     clear: both;
     float: right;
     width: 10rem;
@@ -319,33 +337,17 @@ body {
     margin-bottom: 1.5em;
 }
 
-#contact-form button:disabled{
+#contact-form button:disabled {
     background: hsla(186,0%,53%,1) url(/505832w.svg) no-repeat scroll;
     background-position: right 1rem center;
     background-size: 2.5rem 2.5rem;
 }
 
-#cheader {
-    width: 58em;
-    max-width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2em;
-}
-
-#cheader2 {
-    width: 40em;
-    max-width: 95vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2em;
-}
-
-.field {
+#contact-form .field {
     padding: 0.75em;
 }
 
-.field input, textarea {
+#contact-form .field input, #contact-form .field textarea {
     width: calc(100% - 1.5em);
     padding: .4em;
     padding-left: 0.75em;
@@ -354,7 +356,7 @@ body {
     font-weight: 200;
 }
 
-.field textarea {
+#contact-form .field textarea {
     padding-top: 0.75em;
 }
 
@@ -388,7 +390,6 @@ body {
         font-size: 0.9em;
     }
 }
-
 </style>
 
 </head>
@@ -396,8 +397,8 @@ body {
 <body>
 <div id="content">
     <div id="centered">
-        <div id="header">
 
+        <div id="header">
             <div id="tlname">
                 <a href="/" class="applink">Charles Law<span class="underline"></span></a>
             </div>
@@ -557,7 +558,6 @@ body {
             }
         }
     });
-
 </script>
 
 </html>

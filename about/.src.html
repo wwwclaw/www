@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Charles Law: About</title>
@@ -7,7 +9,6 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js',new Date());gtag('config','UA-168050871-1');
     </script>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -51,6 +52,10 @@ body {
     line-height: 1rem;
     height: 1em;
     align-self: center;
+}
+
+#tlname .underline {
+	height: 3px;
 }
 
 #header {
@@ -151,6 +156,9 @@ body {
     left: 0;
     right: 0;
     z-index: -1;
+    width: 280.375px;
+    max-width: 38vw;
+    background-size: contain;
 }
 
 #myname {
@@ -281,21 +289,6 @@ body {
     display    : none;
 }
 
-#contentt {
-    margin-top: 2em;
-    margin-bottom: 3em;
-    line-height: 2rem;
-    width: 50em;
-    max-width: 70vw;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#contentt h2 {
-    margin-left: -2em;
-    margin-top: 2em;
-}
-
 #cheader {
     width: 58em;
     max-width: 90vw;
@@ -310,6 +303,21 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2em;
+}
+
+#contentt {
+    margin-top: 2em;
+    margin-bottom: 3em;
+    line-height: 2rem;
+    width: 50em;
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contentt h2 {
+    margin-left: -2em;
+    margin-top: 2em;
 }
 
 @media screen and (max-height: 840px) {
@@ -330,13 +338,14 @@ body {
     }
 }
 </style>
+
 </head>
 
 <body>
 <div id="content">
     <div id="centered">
-        <div id="header">
 
+        <div id="header">
             <div id="tlname">
                 <a href="/" class="applink">Charles Law<span class="underline"></span></a>
             </div>
@@ -410,8 +419,8 @@ What made this challenging was that we built everything while meeting EU and FDA
 I led the design and development of Eyenuk's second major product, EyeScreen Service (ESS), which combined human and AI grading. We created an interface that users love, and ESS has since become Eyenuk's primary product in the US.
 </p>
 
+        </div>
     </div>
-</div>
 
     <div id="footer">
         <div id="olinks">
