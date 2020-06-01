@@ -9,15 +9,32 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js',new Date());gtag('config','UA-168050871-1');
     </script>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="/favicon-144.png">
     <link rel="icon" sizes="16x16 32x32 48x48" href="/favicon.ico">
+    <link rel="preload" href="/montserrat-latin-400.woff2" as="font" crossorigin>
+    <link rel="preload" href="/montserrat-latin-700.woff2" as="font" crossorigin>
 </head>
 
 <style type=text/css>
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(/montserrat-latin-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(/montserrat-latin-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 body {
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
